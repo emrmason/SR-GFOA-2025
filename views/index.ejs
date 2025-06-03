@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>SoftResources 2025 GFOA Survey</title>
+  </head>
+  <body>
+    <h1>SoftResources GFOA 2025 Survey</h1>
+    <section class="form-container">
+      <form class="form">
+        <div id="q1">
+          <h2>Which ERP system do you use?</h2>
+          <input
+            type="checkbox"
+            class="form-field"
+            name="<%= locals.system %>"
+          />
+          <label for="<%= locals.system %>"></label>
+        </div>
+        <div id="q2">
+          <button class="q2-btn" id="like-it" value="love">It's tops!</button>
+          <button class="q2-btn" id="meh" value="meh">Meh.</button>
+          <button class="q2-btn" id="over-it" value="hate">Over it.</button>
+        </div>
+        <div id="q3">
+          <h2>Want the results?</h2>
+          <br />
+          <input
+            type="email"
+            class="form-field"
+            id="survey_email"
+            name="survey_email"
+            placeholder="myemail@email.com"
+          /><button>Submit</button>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
