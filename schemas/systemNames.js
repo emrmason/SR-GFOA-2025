@@ -6,6 +6,6 @@ const systemSchema = new mongoose.Schema({
   },
 });
 
-const SystemName = mongoose.model("SystemName", surveySchema);
+const SystemName = mongoose.model("SystemName", systemSchema);
 
-module.exports = Surveyresponse;
+module.exports = SystemName;

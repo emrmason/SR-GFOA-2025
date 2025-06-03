@@ -5,6 +5,7 @@ const app = express();
 const port = 3000;
 const { connectDB } = require("./controllers/connection");
 const dotenv = require("dotenv").config();
+const { getSystemNames } = require("./controllers/system");
 
 const startServer = async () => {
   await connectDB();
@@ -19,9 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   console.log("Working!");
-  res.render("index", {
-    system: "",
-  });
+  res.render("index", { getSystemNames });
 });
 
 router.use(express.static("public"));

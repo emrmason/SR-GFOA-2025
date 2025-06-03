@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
-const dotenv = require("dotenv");
-
-dotenv.config();
+const dotenv = require("dotenv").config();
 
 // Close Mongoose connection on SIGINT (Ctrl+C)
 process.on("SIGINT", function () {

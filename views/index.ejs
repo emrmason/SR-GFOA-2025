@@ -12,12 +12,14 @@
       <form class="form">
         <div id="q1">
           <h2>Which ERP system do you use?</h2>
+          <% SystemName.forEach(system =>{ %>
           <input
             type="checkbox"
             class="form-field"
-            name="<%= locals.system %>"
+            name="<%= system.system %>"
           />
-          <label for="<%= locals.system %>"></label>
+          <label for="<%= system.system %>"><%= system.system %></label>
+          <% }) %>
         </div>
         <div id="q2">
           <button class="q2-btn" id="like-it" value="love">It's tops!</button>
