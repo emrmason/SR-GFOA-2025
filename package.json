@@ -4,7 +4,7 @@
   "description": "SR GFOA 2025 survey",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/emrmason/SR-GFOA-2025#readme",
   "dependencies": {
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "mongodb": "^6.16.0"
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.15.1"
   },
   "devDependencies": {
     "eslint": "^9.28.0"

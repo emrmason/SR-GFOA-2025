@@ -8,7 +8,7 @@ const surveySchema = new mongoose.Schema({
     type: String,
   },
   email: {
-    type: email,
+    type: String,
   },
 });
 

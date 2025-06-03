@@ -3,9 +3,6 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-mongoose.connect(process.env.DATABASE_URL);
-console.log("DB Connected!");
-
 // Close Mongoose connection on SIGINT (Ctrl+C)
 process.on("SIGINT", function () {
   mongoose.connection.close();
@@ -13,6 +10,9 @@ process.on("SIGINT", function () {
   process.exit(0);
 });
 
-const connectDB = mongoose.connection;
+const connectDB = async () => {
+  await mongoose.connect(process.env.DATABASE_URL);
+  console.log("DB Connected!");
+};
 
 module.exports = { connectDB };
