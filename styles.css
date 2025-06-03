@@ -1,0 +1,49 @@
+:root {
+  --primary-text: #003049;
+  --primary-background: #8cb3cb;
+  --vanilla: #fdf0d5;
+  --light-red: #b8111c;
+  --dark-red: #780000;
+  --body-font: Arial, sans-serif;
+  --other-color: #beeffb;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--primary-background);
+  color: var(--primary-text);
+  align-items: center;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+#wrapper {
+  width: 95%;
+  height: 95%;
+  display: inline-block;
+  align-items: center;
+}
+
+div {
+  background-color: var(--vanilla);
+  width: 500px;
+  height: 1000px;
+}
+
+.q2-btn {
+  font-size: 1.5em;
+  height: 200px;
+  width: 450px;
+  margin: auto;
+  padding: 25px;
+}
+
+.q2-btn:hover {
+  opacity: 0.5;
+}
+
+button:active {
+  border: 5px solid var(--dark-red);
+}
