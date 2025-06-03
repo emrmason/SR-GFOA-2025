@@ -18,5 +18,8 @@
   "homepage": "https://github.com/emrmason/SR-GFOA-2025#readme",
   "dependencies": {
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.28.0"
   }
 }
