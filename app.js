@@ -37,5 +37,5 @@ app.get("/", async (req, res) => {
   }
 });
 
-router.use(express.static("public"));
-router.use("/css", express.static(__dirname + "public/css"));
+app.use(express.static("public"));
+app.use("/styles.css", express.static(__dirname + "/public/styles.css"));

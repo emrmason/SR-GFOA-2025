@@ -1,7 +1,7 @@
 :root {
   --primary-text: #003049;
-  --primary-background: #beeffb;
-  --vanilla: #fdf0d5;
+  --primary-background: #dbf3f8;
+  --vanilla: #f9f3e6;
   --light-red: #b8111c;
   --dark-red: #780000;
   --body-font: Arial, sans-serif;
@@ -9,35 +9,71 @@
 
 body {
   font-family: var(--body-font);
-  background-color: var(--primary-background);
+  background-color: var(--vanilla);
   color: var(--primary-text);
-  align-items: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-align: center;
 }
 
 h2 {
   font-size: 2em;
-}
-
-#wrapper {
-  width: 95%;
-  height: 95%;
-  display: inline-block;
-  align-items: center;
+  text-align: center;
 }
 
 div {
-  background-color: var(--vanilla);
-  width: 500px;
-  height: 1000px;
+  background-color: var(--primary-background);
+  border: 3px solid var(--primary-text);
+  border-radius: 10px;
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.form-container h2 {
+  text-align: center;
+}
+
+.form {
+  display: contents;
+}
+
+#q1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+#q2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#q3 {
+  grid-column: 3;
+  grid-row: 1;
 }
 
 .q2-btn {
   font-size: 1.5em;
   font-family: var(--body-font);
-  height: 200px;
-  width: 450px;
-  margin: auto;
-  padding: 25px;
+  height: 20%;
+  width: 80%;
+  margin: 5%;
+  padding: 5%;
+  border: 3px solid var(--primary-text);
+  border-radius: 5px;
 }
 
 .q2-btn:hover {
@@ -46,4 +82,64 @@ div {
 
 button:active {
   border: 5px solid var(--dark-red);
+}
+
+label {
+  font-family: var(--body-font);
+  font-size: 1.2em;
+}
+
+.form-field {
+  margin: 5px auto;
+}
+
+#survey_email {
+  font-size: 1.2em;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  height: 15%;
+  margin: 5%;
+  padding: 5%;
+  border: 3px solid var(--primary-text);
+  border-radius: 5px;
+}
+
+.q3-btn {
+  font-size: 1.5em;
+  font-family: var(--body-font);
+  height: 200px;
+  width: 450px;
+  margin: 25px;
+  padding: 25px;
+  border: 3px solid var(--primary-text);
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  #q1,
+  #q2,
+  #q3 {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  ul {
+    grid-template-columns: 1fr;
+  }
+
+  .q3-btn {
+    width: 90%; /* Make buttons scale better on small screens */
+    height: auto;
+  }
+
+  #survey_email {
+    width: 90%;
+    height: auto;
+  }
 }
