@@ -1,11 +1,12 @@
 const bodyParser = require("body-parser");
 const express = require("express");
+// const expressLayouts = require("express-ejs-layouts");
 const router = express.Router();
 const app = express();
 const port = 3000;
 const { connectDB } = require("./controllers/connection");
 const dotenv = require("dotenv").config();
-const { getSystemNames } = require("./controllers/system");
+const SystemNames = require("./schemas/systemNames");
 
 const startServer = async () => {
   await connectDB();
@@ -14,16 +15,27 @@ const startServer = async () => {
   });
 };
 
+startServer();
+
 app.set("view engine", "ejs");
+// app.use(expressLayouts);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  console.log("Working!");
-  res.render("index", { getSystemNames });
+SystemNames.find()
+  .then((data) => console.log("Database Result: ", data))
+  .catch((err) => console.log("Query error: ", err));
+
+app.get("/", async (req, res) => {
+  console.log("SystemNames model: ", SystemNames);
+  try {
+    const systemNames = await SystemNames.find();
+    console.log("Fetched ERP systems: ", systemNames);
+    res.render("index", { systemNames });
+  } catch (error) {
+    console.error("error fetching system names: ", error);
+  }
 });
 
 router.use(express.static("public"));
 router.use("/css", express.static(__dirname + "public/css"));
-
-startServer();

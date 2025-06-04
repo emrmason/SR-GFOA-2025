@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
-const systemSchema = new mongoose.Schema({
+const SystemNameSchema = new mongoose.Schema({
   system: {
     type: String,
   },
 });
 
-const SystemName = mongoose.model("SystemName", systemSchema);
+const SystemNames = mongoose.model("SystemNames", SystemNameSchema);
 
-module.exports = SystemName;
+module.exports = SystemNames;
