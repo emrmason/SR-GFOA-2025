@@ -9,8 +9,12 @@ process.on("SIGINT", function () {
 });
 
 const connectDB = async () => {
-  await mongoose.connect(process.env.DATABASE_URL);
-  console.log("DB Connected!");
+  try {
+    await mongoose.connect(process.env.DATABASE_URL);
+    console.log("DB Connected!");
+  } catch (error) {
+    console.error("MongoDB connection error, ", error);
+  }
 };
 
 module.exports = { connectDB };

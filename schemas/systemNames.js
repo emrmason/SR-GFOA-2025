@@ -6,6 +6,10 @@ const SystemNameSchema = new mongoose.Schema({
   },
 });
 
-const SystemNames = mongoose.model("SystemNames", SystemNameSchema);
+const SystemNames = mongoose.model(
+  "SystemNames",
+  SystemNameSchema,
+  "SystemNames"
+);
 
 module.exports = SystemNames;

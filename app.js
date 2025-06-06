@@ -22,10 +22,6 @@ app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-SystemNames.find()
-  .then((data) => console.log("Database Result: ", data))
-  .catch((err) => console.log("Query error: ", err));
-
 app.get("/", async (req, res) => {
   console.log("SystemNames model: ", SystemNames);
   try {
@@ -36,6 +32,10 @@ app.get("/", async (req, res) => {
     console.error("error fetching system names: ", error);
   }
 });
+
+SystemNames.find()
+  .then((data) => console.log("Database Result: ", data))
+  .catch((err) => console.log("Query error: ", err));
 
 app.use(express.static("public"));
 app.use("/styles.css", express.static(__dirname + "/public/styles.css"));
