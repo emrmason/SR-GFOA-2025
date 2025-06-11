@@ -52,7 +52,11 @@ div {
   grid-row: 1;
 }
 
-ul {
+#system-list {
+  border: none;
+}
+
+#system-list ul {
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -121,18 +125,22 @@ label {
   border-radius: 5px;
 }
 
-span {
+#done {
   grid-column: 1/4;
   grid-row: 2;
-  width: 800px;
+  width: 100%;
   height: 100px;
   background-color: var(--primary-background);
   border: 3px solid var(--primary-text);
+  border-radius: 5px;
 }
 
 .done-btn {
+  text-align: center;
   font-size: 1.5em;
   font-family: var(--body-font);
+  border: 3px solid var(--primary-text);
+  border-radius: 5px;
 }
 
 @media (max-width: 768px) {
