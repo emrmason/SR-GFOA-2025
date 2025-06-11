@@ -1,7 +1,7 @@
 :root {
-  --primary-text: #003049;
-  --primary-background: #dbf3f8;
-  --vanilla: #f9f3e6;
+  --primary-text: black;
+  --primary-background: white;
+  --sr-blue: #0b45bb;
   --light-red: #b8111c;
   --dark-red: #780000;
   --body-font: Arial, sans-serif;
@@ -9,8 +9,11 @@
 
 body {
   font-family: var(--body-font);
-  background-color: var(--vanilla);
+  background-color: var(--sr-blue);
   color: var(--primary-text);
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 2%;
 }
 
 h1 {
@@ -32,6 +35,7 @@ div {
 .form-container {
   display: grid;
   grid-template-columns: repeat(3, minmax(250px, 1fr));
+  grid-template-rows: 90% 10%;
   gap: 25px;
 }
 
@@ -76,7 +80,9 @@ ul {
   border-radius: 5px;
 }
 
-.q2-btn:hover {
+.q2-btn:hover,
+.q3-btn:hover,
+li:hover {
   opacity: 0.5;
 }
 
@@ -95,7 +101,6 @@ label {
 
 #survey_email {
   font-size: 1.2em;
-  align-items: center;
   text-align: center;
   width: 80%;
   height: 15%;
@@ -108,12 +113,26 @@ label {
 .q3-btn {
   font-size: 1.5em;
   font-family: var(--body-font);
-  height: 200px;
-  width: 450px;
-  margin: 25px;
-  padding: 25px;
+  height: 20%;
+  width: 80%;
+  margin: 5%;
+  padding: 5%;
   border: 3px solid var(--primary-text);
   border-radius: 5px;
+}
+
+span {
+  grid-column: 1/4;
+  grid-row: 2;
+  width: 800px;
+  height: 100px;
+  background-color: var(--primary-background);
+  border: 3px solid var(--primary-text);
+}
+
+.done-btn {
+  font-size: 1.5em;
+  font-family: var(--body-font);
 }
 
 @media (max-width: 768px) {
@@ -134,12 +153,12 @@ label {
   }
 
   .q3-btn {
-    width: 90%; /* Make buttons scale better on small screens */
+    width: fit-content; /* Make buttons scale better on small screens */
     height: auto;
   }
 
   #survey_email {
-    width: 90%;
+    width: fit-content;
     height: auto;
   }
 }

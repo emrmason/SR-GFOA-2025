@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const surveySchema = new mongoose.Schema({
   erp: {
-    type: String,
+    type: [String],
   },
   likeit: {
     type: String,

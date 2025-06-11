@@ -7,7 +7,7 @@ const surveyAnswer = {};
 
 const getSystemNames = async (req, res) => {
   try {
-    const systemNames = await SystemNames.find();
+    const systemNames = await SystemNames.find({}, { _id: 0 });
     console.log(systemNames);
     res.json(systemNames);
   } catch (error) {

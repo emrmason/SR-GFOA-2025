@@ -23,19 +23,30 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", async (req, res) => {
-  console.log("SystemNames model: ", SystemNames);
+  // console.log("SystemNames model: ", SystemNames);
   try {
-    const systemNames = await SystemNames.find();
-    console.log("Fetched ERP systems: ", systemNames);
+    const systemNames = await SystemNames.find().then((data) => {
+      // console.log("Database Result: ", data);
+      let list = "<ul>";
+      for (x in data) {
+        obj = data[x];
+        sys = obj.system;
+        list += "<li>";
+        list += "<label for='sys-name' class='q1'" + sys + "/>" + sys + "</li>";
+        x += 1;
+      }
+      list += "</ul";
+      return list;
+    });
+    // SystemNames.find({}, { _id: 0 });
+    // console.log("Fetched ERP systems: ", systemNames);
     res.render("index", { systemNames });
   } catch (error) {
     console.error("error fetching system names: ", error);
   }
 });
 
-SystemNames.find()
-  .then((data) => console.log("Database Result: ", data))
-  .catch((err) => console.log("Query error: ", err));
+// .catch((err) => console.log("Query error: ", err));
 
 app.use(express.static("public"));
 app.use("/styles.css", express.static(__dirname + "/public/styles.css"));
