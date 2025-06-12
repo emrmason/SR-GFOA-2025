@@ -5,13 +5,12 @@ document.querySelectorAll("#q1 li").forEach((item) => {
     });
     this.style.backgroundColor = "#0b45bb";
     this.style.color = "white";
+    this.classList.add("selected");
   });
 });
 
 document.querySelectorAll("#q2 .q2-btn").forEach((button) => {
-  button.addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent form submission on button click
-
+  button.addEventListener("click", function () {
     // Remove active state from other buttons
     document.querySelectorAll("#q2 .q2-btn").forEach((btn) => {
       btn.style.backgroundColor = "gray";
@@ -19,6 +18,8 @@ document.querySelectorAll("#q2 .q2-btn").forEach((button) => {
 
     // Highlight selected button
     this.style.backgroundColor = "#0b45bb";
+    this.style.color = "white";
+    this.classList.add("selected");
   });
 });
 

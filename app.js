@@ -29,13 +29,8 @@ app.get("/", async (req, res) => {
       for (x in data) {
         obj = data[x];
         sys = obj.system;
-        list += "<li onclick='userSelect()>";
-        list +=
-          "<label for='sys-name' class='q1'  name=" +
-          sys +
-          "/>" +
-          sys +
-          "</li>";
+        list += "<li>";
+        list += "<label for='#' class='q1'  name=" + sys + "/>" + sys + "</li>";
         x += 1;
       }
       list += "</ul>";

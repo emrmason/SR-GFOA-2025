@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles.css" />
+    <script src="/public/script.js"></script>
     <title>SoftResources 2025 GFOA Survey</title>
   </head>
   <body>
-    <!-- <h1>SoftResources GFOA 2025 Survey</h1> -->
     <section class="form-container">
       <form class="form" id="survey-form" action="/submit" method="POST">
         <div id="q1">
@@ -16,11 +16,15 @@
         </div>
         <div id="q2">
           <h2>How's it working for you?</h2>
-          <button class="q2-btn" id="like-it" value="love">
+          <button class="q2-btn" id="like-it" value="love" type="button">
             It's the BEST!
           </button>
-          <button class="q2-btn" id="meh" value="meh">Meh.</button>
-          <button class="q2-btn" id="over-it" value="hate">Over it.</button>
+          <button class="q2-btn" id="meh" value="meh" type="button">
+            Meh.
+          </button>
+          <button class="q2-btn" id="over-it" value="hate" type="button">
+            Over it.
+          </button>
         </div>
         <div id="q3">
           <h2>Want the results?</h2>
@@ -35,9 +39,7 @@
           />
         </div>
         <div id="q4">
-          <span id="done">
-            <button class="done-btn" id="submit">Finished</button>
-          </span>
+          <button class="q4-btn" id="submit" type="submit">Finished</button>
         </div>
       </form>
     </section>
