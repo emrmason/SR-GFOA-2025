@@ -7,6 +7,8 @@ const port = 3000;
 const { connectDB } = require("./controllers/connection");
 const dotenv = require("dotenv").config();
 const SystemNames = require("./schemas/systemNames");
+const { addSurveyAnswer } = require("./controllers/system");
+const surveyRouter = require("./routes/survey");
 
 const startServer = async () => {
   await connectDB();
@@ -21,6 +23,8 @@ app.set("view engine", "ejs");
 // app.use(expressLayouts);
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use("/survey", surveyRouter);
 
 app.get("/", async (req, res) => {
   try {

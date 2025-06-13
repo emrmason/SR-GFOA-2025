@@ -26,8 +26,6 @@ document.querySelectorAll("#q2 .q2-btn").forEach((button) => {
 document
   .getElementById("survey-form")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent page refresh
-
     alert("Thanks for participating!"); // Feedback to user
 
     // Reset styling for q1 items

@@ -4,7 +4,7 @@ const surveySchema = new mongoose.Schema({
   erp: {
     type: [String],
   },
-  likeit: {
+  likeIt: {
     type: String,
   },
   email: {
@@ -12,6 +12,6 @@ const surveySchema = new mongoose.Schema({
   },
 });
 
-const Surveyresponse = mongoose.model("Surveyresponse", surveySchema);
+const SurveyResponse = mongoose.model("Surveyresponse", surveySchema);
 
-module.exports = Surveyresponse;
+module.exports = SurveyResponse;
