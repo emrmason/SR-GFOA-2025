@@ -5,15 +5,52 @@ const SurveyResponse = require("../schemas/survey");
 const { response } = require("express");
 // const surveyAnswer = {};
 
-// // const getSystemNames = async (req, res) => {
-// //   try {
-// //     const systemNames = await SystemNames.find({}, { _id: 0 });
-// //     console.log(systemNames);
-// //     res.json(systemNames);
-// //   } catch (error) {
-// //     console.error("Error fetching system names: ", error);
-// //   }
-// // };
+// const getSystemNames = async (req, res) => {
+//   try {
+//     const systemNames = await SystemNames.find().then((data) => {
+//       let sorted = [];
+//       let listed = [];
+//       let list = "<ul>";
+//       for (x in data) {
+//         obj = data[x];
+//         sys = obj.system;
+//         listed.push(sys);
+//         x += 1;
+//       }
+//       sorted = listed.sort();
+//       for (x in sorted) {
+//         sys = sorted[x];
+//         list += "<li>";
+//         list += "<label for='#' class='q1'  name=" + sys + "/>" + sys + "</li>";
+//         x += 1;
+//       }
+//       list += "</ul>";
+//       return list;
+//     });
+//   } catch (error) {
+//     console.error("error fetching system names: ", error);
+//   }
+// };
+
+const getSystemNames = async () => {
+  try {
+    const systemNames = await SystemNames.find(); // Define it here
+    let sorted = systemNames.map((obj) => obj.system).sort(); // Extract names and sort
+    let list =
+      "<ul>" +
+      sorted
+        .map(
+          (sys) => `<li><label for='#' class='q1' name='${sys}'/>${sys}</li>`
+        )
+        .join("") +
+      "</ul>";
+
+    return list; // Ensure list is returned
+  } catch (error) {
+    console.error("Error fetching system names:", error);
+    return "<ul><li>Error loading systems</li></ul>"; // Return fallback
+  }
+};
 
 const addSurveyAnswer = async (req, res, next) => {
   // const newAnswer = {
@@ -50,4 +87,4 @@ const addSurveyAnswer = async (req, res, next) => {
 // }
 // };
 
-module.exports = { addSurveyAnswer };
+module.exports = { addSurveyAnswer, getSystemNames };

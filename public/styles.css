@@ -103,6 +103,11 @@ li:hover {
   width: 80%;
 }
 
+.q2-btn.selected,
+li.selected {
+  width: 80%;
+}
+
 li {
   font-family: var(--body-font);
   font-size: 1.2em;
