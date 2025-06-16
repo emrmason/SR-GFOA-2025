@@ -64,7 +64,7 @@ const addSurveyAnswer = async (req, res, next) => {
       likeIt: req.body.likeIt,
       email: req.body.survey_email,
     });
-
+    console.log(survey);
     await survey.save();
     res.redirect("/");
   } catch (error) {

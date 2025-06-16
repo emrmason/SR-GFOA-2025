@@ -23,7 +23,7 @@ app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
-app.use("/survey", surveyRouter);
+app.post("/submit", addSurveyAnswer);
 
 app.get("/", async (req, res) => {
   try {
