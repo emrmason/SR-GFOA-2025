@@ -103,6 +103,15 @@ li:hover {
   width: 80%;
 }
 
+.q2-btn:active,
+.q3-btn:active,
+.q4-btn:active,
+li:active {
+  background-color: #0b45bb;
+  color: white;
+  width: 80%;
+}
+
 .q2-btn.selected,
 li.selected {
   width: 80%;
@@ -147,7 +156,7 @@ li {
   text-align: center;
   font-size: 1.5em;
   font-family: var(--body-font);
-  width: 50%;
+  width: 80%;
   border: 3px solid var(--primary-text);
   border-radius: 5px;
 }
