@@ -15,8 +15,8 @@ const getSystemNames = async () => {
             `<li><label for='#' id='sys-name' class='q1' name='${sys}' value='${sys}'/>${sys}</li>`
         )
         .join("") +
-      "<li><label id='sys-name' name='' value=''>Other:</label>" +
-      "<input type='text' class='form-field' id='sys-name'/></li>" +
+      "<li><label id='other-sys-name' name='other-sys-name' value=''>Other:</label>" +
+      "<input type='text' class='q1' id='other-input'/></li>" +
       "</ul>";
     return list;
   } catch (error) {
@@ -35,7 +35,7 @@ const addSurveyAnswer = async (req, res, next) => {
     // console.log(survey);
     await survey.save();
     // res.redirect("/");
-    res.redirect("/?submitted=1");
+    res.render("./thankyou");
   } catch (error) {
     console.error("Error saving survey:", error);
     res.status(500).send("Internal Server Error");
