@@ -152,6 +152,14 @@ li {
   border-radius: 5px;
 }
 
+.flash.success {
+  background-color: white;
+  color: black;
+  width: 100%;
+  height: 20%;
+  border: 3px solid var(--sr-blue);
+}
+
 @media (max-width: 768px) {
   /* .form-container {
     grid-template-columns: 1fr;

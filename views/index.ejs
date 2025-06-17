@@ -8,18 +8,21 @@
     <title>SoftResources 2025 GFOA Survey</title>
   </head>
   <body>
+    <div id="thank-you-banner" style="display: none" class="flash success">
+      Thanks for your submission!
+    </div>
     <section class="form-container">
       <form class="form" id="survey-form" action="/submit" method="POST">
         <div id="q1">
           <h2>Which system do you use?</h2>
           <div id="system-list">
-            <input type="hidden" name="erp" id="erp-selected" /><%- systemList
-            %>
+            <input type="hidden" name="erp" id="erp-selected" value="" /><%-
+            systemList %>
           </div>
         </div>
         <div id="q2">
           <h2>How's it working for you?</h2>
-          <input type="hidden" name="likeIt" id="like-selected" />
+          <input type="hidden" name="likeIt" id="like-selected" value="" />
           <button class="q2-btn" id="like-it" value="love" type="button">
             It's the BEST!
           </button>

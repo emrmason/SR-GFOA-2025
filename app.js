@@ -9,6 +9,7 @@ const dotenv = require("dotenv").config();
 const SystemNames = require("./schemas/systemNames");
 const { addSurveyAnswer, getSystemNames } = require("./controllers/system");
 const surveyRouter = require("./routes/survey");
+const flash = require("connect-flash");
 
 const startServer = async () => {
   await connectDB();
@@ -21,9 +22,10 @@ startServer();
 
 app.set("view engine", "ejs");
 
+app.use(flash());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
-app.post("/submit", addSurveyAnswer);
+app.use("/", surveyRouter);
 
 app.get("/", async (req, res) => {
   try {
