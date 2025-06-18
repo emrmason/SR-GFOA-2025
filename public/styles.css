@@ -5,6 +5,10 @@
   --body-font: Arial, sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: var(--body-font);
   background-color: var(--sr-blue);
@@ -30,6 +34,7 @@ h2 {
   background-color: var(--primary-background);
   border: 3px solid var(--primary-text);
   border-radius: 10px;
+  box-sizing: border-box;
 }
 
 .form-container {
@@ -37,6 +42,7 @@ h2 {
   grid-template-columns: repeat(3, minmax(250px, 1fr));
   grid-template-rows: 90% 10%;
   gap: 25px;
+  box-sizing: border-box;
 }
 
 .form-container h2 {
@@ -92,7 +98,6 @@ h2 {
   padding: 5%;
   border: 3px solid var(--primary-text);
   border-radius: 5px;
-  box-sizing: border-box;
 }
 
 .q2-btn:hover,
@@ -132,7 +137,6 @@ li {
   padding: 5%;
   border: 3px solid var(--primary-text);
   border-radius: 5px;
-  box-sizing: border-box;
 }
 
 .q3-btn {
@@ -144,7 +148,6 @@ li {
   padding: 5%;
   border: 3px solid var(--primary-text);
   border-radius: 5px;
-  box-sizing: border-box;
 }
 
 #q4 {
@@ -157,7 +160,7 @@ li {
 
 .q4-btn {
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2em;
   font-family: var(--body-font);
   width: 80%;
   border: 3px solid var(--primary-text);
@@ -177,40 +180,34 @@ li {
 }
 
 @media (max-width: 768px) {
-  /* .form-container {
-    grid-template-columns: 1fr;
-    width: 100%;
-  } */
   .form-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
 
-  /* #q1,
+  #q1,
   #q2,
-  #q3 {
-    grid-column: 1;
-    grid-row: auto;
-  } */
+  #q3,
+  #q4 {
+    padding: 1em;
+  }
 
   #system-list ul {
     grid-template-columns: 1fr;
   }
 
   .q2-btn,
+  .q3-btn,
+  .q4-btn,
   #survey_email,
-  .q3-btn {
+  input[type="text"],
+  input[type="email"],
+  button {
     width: 100%;
+    max-width: 100%;
+    padding: 0.75em;
+    font-size: 1.2em;
+    margin: 0.5em 0;
   }
-
-  /* .q3-btn {
-    width: fit-content; /* Make buttons scale better on small screens */
-  /* height: auto;
-  }
-
-  #survey_email {
-    width: fit-content;
-    height: auto;
-  } */
 }
