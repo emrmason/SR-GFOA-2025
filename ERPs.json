@@ -9,13 +9,79 @@
     "system": "Caselle"
   },
   {
-    "system": "CentralSquare"
+    "system": "CentralSquare Naviline"
+  },
+  {
+    "system": "CentralSquare Finance Enterprise"
+  },
+  {
+    "system": "CentralSquare Vadim"
+  },
+  {
+    "system": "CentralSquare Diamond ERP"
+  },
+  {
+    "system": "Microsoft Dynamics"
+  },
+  {
+    "system": "Microsoft Great Plains"
+  },
+  {
+    "system": "Harris CitySuite"
+  },
+  {
+    "system": "Harris Gems"
+  },
+  {
+    "system": "Harris Cayenta"
+  },
+  {
+    "system": "Accufund"
+  },
+  {
+    "system": "American Data Group"
+  },
+  {
+    "system": "Edmunds"
+  },
+  {
+    "system": "Cogsdale"
+  },
+  {
+    "system": "Univerus"
+  },
+  {
+    "system": "TownCloud"
+  },
+  {
+    "system": "Cayenta"
+  },
+  {
+    "system": "Tripleview"
+  },
+  {
+    "system": "Blackbaud"
+  },
+  {
+    "system": "Oracle PeopleSoft"
+  },
+  {
+    "system": "Oracle JD Edwards"
+  },
+  {
+    "system": "Oracle ERP Cloud"
+  },
+  {
+    "system": "Oracle EBS"
   },
   {
     "system": "CGI"
   },
   {
-    "system": "DebtBook"
+    "system": "Tyler EERP (Munis)"
+  },
+  {
+    "system": "Tyler ERP Pro (Incode)"
   },
   {
     "system": "GovSense"
@@ -46,9 +112,6 @@
   },
   {
     "system": "Workday"
-  },
-  {
-    "system": ""
   },
   {
     "system": "SAP"
