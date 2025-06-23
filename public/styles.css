@@ -1,7 +1,16 @@
+* {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings: "wdth" 100; */
+}
+
 :root {
   --primary-text: black;
   --primary-background: white;
   --sr-blue: #0b45bb;
+  --header-font: "Noto Serif", serif;
   --body-font: Arial, sans-serif;
 }
 
@@ -10,39 +19,48 @@
 }
 
 body {
-  font-family: var(--body-font);
-  background-color: var(--sr-blue);
+  font-family: var(--header-font);
+  height: 100vh;
+  background-image: linear-gradient(to bottom left, var(--sr-blue), white);
   color: var(--primary-text);
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 2%;
+  margin-left: 2%;
   margin-top: 2%;
 }
 
 h1 {
   font-size: 2.5em;
   text-align: center;
+  font-family: var(--header-font);
 }
 
 h2 {
   font-size: 2em;
+  font-family: var(--header-font);
   text-align: center;
+  margin-top: 0;
 }
 
 #q1,
 #q2,
 #q3 {
+  font-family: var(--header-font);
   background-color: var(--primary-background);
-  border: 3px solid var(--primary-text);
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 10px;
   box-sizing: border-box;
 }
 
 .form-container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  grid-template-columns: minmax(250px, 2fr), minmax(250px, 1fr),
+    minmax(250px, 1fr);
   grid-template-rows: 90% 10%;
   gap: 25px;
-  box-sizing: border-box;
 }
 
 .form-container h2 {
@@ -67,19 +85,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-}
-
-#q2 {
-  grid-column: 2;
-  grid-row: 1;
-  display: block;
-  justify-content: center;
-  align-content: center;
-}
-
-#q3 {
-  grid-column: 3;
-  grid-row: 1;
+  padding-bottom: 10px;
 }
 
 #q4 {
@@ -90,42 +96,37 @@ h2 {
 }
 
 .q2-btn {
-  font-size: 1.5em;
-  font-family: var(--body-font);
+  font-size: 2em;
+  font-family: var(--header-font);
   height: 18%;
   width: 80%;
   margin: 5%;
   padding: 5%;
-  border: 3px solid var(--primary-text);
+  border-color: gray;
   border-radius: 5px;
 }
 
 .q2-btn:hover,
 .q3-btn:hover,
 .q4-btn:hover,
-li:hover {
-  background-color: #0b45bb;
-  color: white;
-  width: 80%;
-}
-
+li:hover,
 .q2-btn:active,
 .q3-btn:active,
 .q4-btn:active,
-li:active {
-  background-color: #0b45bb;
-  color: white;
-  width: 80%;
-}
-
+li:active,
 .q2-btn.selected,
 li.selected {
-  width: 80%;
+  background-color: #2a69e7;
+  color: white;
 }
 
 li {
   font-family: var(--body-font);
-  font-size: 1.2em;
+  font-size: 1em;
+  /* border: 1px solid black;
+  border-radius: 5px; */
+  /* text-align: center; */
+  list-style-image: url("./images/right-arrow_6635045.png");
 }
 
 #survey_email {
@@ -135,47 +136,47 @@ li {
   height: 15%;
   margin: 5%;
   padding: 5%;
-  border: 3px solid var(--primary-text);
   border-radius: 5px;
 }
 
 .q3-btn {
   font-size: 1.5em;
-  font-family: var(--body-font);
+  font-family: var(--header-font);
   height: 20%;
   width: 80%;
   margin: 5%;
   padding: 5%;
-  border: 3px solid var(--primary-text);
+  border-color: gray;
   border-radius: 5px;
 }
 
 #q4 {
   grid-column: 1/4;
   grid-row: 2;
-  /* background-color: var(--primary-background);
-  border: 3px solid var(--primary-text);
-  border-radius: 5px; */
+  border-radius: 5px;
 }
 
 .q4-btn {
   text-align: center;
   font-size: 2em;
-  font-family: var(--body-font);
+  font-family: var(--header-font);
   width: 80%;
-  border: 3px solid var(--primary-text);
+  border-color: gray;
   border-radius: 5px;
 }
 
 .success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: white;
   color: black;
   width: 60%;
-  height: 30%;
+  height: 20%;
   border-radius: 5px;
-  border: 3px solid black;
   text-align: center;
   font-size: 2em;
+  font-family: var(--header-font);
   margin: auto;
 }
 
