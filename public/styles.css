@@ -1,25 +1,18 @@
 * {
   font-family: "Noto Serif", serif;
   font-optical-sizing: auto;
-  /* font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings: "wdth" 100; */
+  box-sizing: border-box;
 }
 
 :root {
   --primary-text: black;
   --primary-background: white;
   --sr-blue: #0b45bb;
-  --header-font: "Noto Serif", serif;
-  --body-font: Arial, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
+  --font: "Noto Serif", serif;
 }
 
 body {
-  font-family: var(--header-font);
+  font-family: var(--font);
   height: 100vh;
   background-image: linear-gradient(to bottom left, var(--sr-blue), white);
   color: var(--primary-text);
@@ -31,12 +24,12 @@ body {
 h1 {
   font-size: 2.5em;
   text-align: center;
-  font-family: var(--header-font);
+  font-family: var(--font);
 }
 
 h2 {
   font-size: 2em;
-  font-family: var(--header-font);
+  font-family: var(--font);
   text-align: center;
   margin-top: 0;
 }
@@ -44,7 +37,7 @@ h2 {
 #q1,
 #q2,
 #q3 {
-  font-family: var(--header-font);
+  font-family: var(--font);
   background-color: var(--primary-background);
   border-radius: 10px;
   display: flex;
@@ -74,30 +67,20 @@ h2 {
 #q1 {
   grid-column: 1;
   grid-row: 1;
-}
-
-#system-list {
-  border: none;
+  box-sizing: border-box;
 }
 
 #system-list ul {
   list-style-type: none;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
   gap: 10px;
   padding-bottom: 10px;
 }
 
-#q4 {
-  grid-column: 1 / span 3;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-
 .q2-btn {
   font-size: 2em;
-  font-family: var(--header-font);
+  font-family: var(--font);
   height: 18%;
   width: 80%;
   margin: 5%;
@@ -123,9 +106,7 @@ li.selected {
 li {
   font-family: var(--body-font);
   font-size: 1em;
-  /* border: 1px solid black;
-  border-radius: 5px; */
-  /* text-align: center; */
+  box-sizing: border-box;
   list-style-image: url("./images/right-arrow_6635045.png");
 }
 
@@ -141,7 +122,7 @@ li {
 
 .q3-btn {
   font-size: 1.5em;
-  font-family: var(--header-font);
+  font-family: var(--font);
   height: 20%;
   width: 80%;
   margin: 5%;
@@ -154,12 +135,15 @@ li {
   grid-column: 1/4;
   grid-row: 2;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .q4-btn {
   text-align: center;
   font-size: 2em;
-  font-family: var(--header-font);
+  font-family: var(--font);
   width: 80%;
   border-color: gray;
   border-radius: 5px;
@@ -176,7 +160,7 @@ li {
   border-radius: 5px;
   text-align: center;
   font-size: 2em;
-  font-family: var(--header-font);
+  font-family: var(--font);
   margin: auto;
 }
 
