@@ -12,7 +12,7 @@ const getSystemNames = async () => {
       sorted
         .map(
           (sys) =>
-            `<li><label for='#' id='sys-name' class='q1' name='${sys}' value='${sys}'/>${sys}</li>`
+            `<li><label for='${sys}' id='sys-name' class='q1' name='${sys}' value='${sys}'/>${sys}</li>`
         )
         .join("") +
       "<li><label for='other-sys-name' id='other-sys-name' name='other-sys-name' value='' placeholder='System Name'>Other:</label>" +
