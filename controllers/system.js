@@ -16,7 +16,7 @@ const getSystemNames = async () => {
         )
         .join("") +
       "<li><label for='other-sys-name' id='other-sys-name' name='other-sys-name' value='' placeholder='System Name'>Other:</label>" +
-      "<input type='text' class='q1' id='other-input'/></li>" +
+      "<input type='text' class='q1' id='other-input' inputmode='text'/></li>" +
       "</ul>";
     return list;
   } catch (error) {
