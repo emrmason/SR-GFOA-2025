@@ -15,7 +15,7 @@ const getSystemNames = async () => {
             `<li><label for='#' id='sys-name' class='q1' name='${sys}' value='${sys}'/>${sys}</li>`
         )
         .join("") +
-      "<li><label id='other-sys-name' name='other-sys-name' value='' placeholder='System Name'>Other:</label>" +
+      "<li><label for='other-sys-name' id='other-sys-name' name='other-sys-name' value='' placeholder='System Name'>Other:</label>" +
       "<input type='text' class='q1' id='other-input'/></li>" +
       "</ul>";
     return list;
