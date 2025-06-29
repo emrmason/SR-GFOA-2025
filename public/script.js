@@ -3,6 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const likeHiddenInput = document.getElementById("like-selected");
   const otherInput = document.getElementById("other-input");
 
+  document
+    .getElementById("other-sys-name")
+    .addEventListener("touchstart", function () {
+      this.focus();
+    });
+
   // Q1: ERP system selection
   document.querySelectorAll("#q1 li").forEach((item) => {
     item.addEventListener("click", function () {
